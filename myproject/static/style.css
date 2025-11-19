@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* NAVBAR */
+nav {
+    background: linear-gradient(90deg, #e8f1ee, #f3f6f1, #f5efe6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+    height: 90px;
+    box-shadow: 0 6px 14px rgba(150, 170, 160, 0.25);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* LOGO */
+nav .logo {
+    font-size: 32px;
+    font-weight: 700;
+    color: #6b7d5f;       /* Sage green */
+    letter-spacing: 1.5px;
+    text-shadow: 0 1px 4px rgba(110, 128, 105, 0.3);
+    cursor: default;
+}
+
+/* LINKS */
+nav .links {
+    display: flex;
+    gap: 40px;
+}
+
+nav .links a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: #7c8b72;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Underline Animation */
+nav .links a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #8fae8e, #c1d3b0);
+    transition: width 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+/* Hover effect */
+nav .links a:hover {
+    color: #506c57;
+    text-shadow: 0 1px 6px rgba(130, 150, 135, 0.35);
+    transform: translateY(-2px);
+}
+
+nav .links a:hover::after {
+    width: 100%;
+}
+
+/* ---------- GLOBAL SPACING FOR ALL PAGES ---------- */
+body {
+    background: #fafcf9;
+    padding: 20px;
+}
+
+center {
+    margin-top: 30px;
+}
+
+/* ---------- HEADINGS ---------- */
+h1, h2 {
+    color: #5f6f5b;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* ---------- FORMS (all forms auto-styled) ---------- */
+form {
+    background: #f9f9f5;
+    padding: 25px 35px;
+    width: 400px;
+    margin: 20px auto;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(170, 180, 165, 0.25);
+    border: 1px solid rgba(180, 190, 175, 0.25);
+}
+
+form label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #637466;
+    display: block;
+    margin-top: 12px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #cdd7c9;
+    background: white;
+    outline: none;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #8fae8e;
+    box-shadow: 0 0 6px rgba(140, 170, 145, 0.3);
+}
+
+/* ---------- BUTTONS ---------- */
+button,
+input[type="submit"],
+form button {
+    padding: 10px 18px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(90deg, #8fae8e, #b7cbb1);
+    color: white;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(90deg, #88a889, #a9c3a2);
+}
+
+/* ---------- TABLE STYLING ---------- */
+table {
+    width: 90%;
+    margin: 25px auto;
+    border-collapse: collapse;
+    background: #fafbf8;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(170, 180, 165, 0.25);
+}
+
+th {
+    background: #eef3ed;
+    padding: 14px;
+    text-align: left;
+    color: #637466;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+td {
+    padding: 12px 16px;
+    color: #505f4d;
+    font-size: 15px;
+    border-bottom: 1px solid #e5ece3;
+}
+
+tr:hover {
+    background: #f3f7f1;
+}
+
+/* ---------- LINKS inside tables (Update, Trash, Restore...) ---------- */
+table a {
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-right: 5px;
+    color: white !important;
+}
+
+table a[href*="update"] {
+    background: #7fa77c;
+}
+
+table a[href*="delete"],
+table a[href*="clear"],
+table a[href*="delete_permanent"] {
+    background: #c75c5c;
+}
+
+table a[href*="restore"] {
+    background: #6fa8a0;
+}
+
+table a:hover {
+    opacity: 0.8;
+}
+
+/* ---------- SEARCH BAR ---------- */
+input[type="text"][placeholder="Search"] {
+    width: 250px !important;
+    padding: 10px 14px !important;
+    border-radius: 8px !important;
+    border: 1px solid #cdd7c9 !important;
+    margin-bottom: 20px !important;
+}
+
+input[type="text"][placeholder="Search"]:focus {
+    border-color: #8fae8e !important;
+}
+
+/* ---------- PAGE LINKS (like Add new Task, Restore all) ---------- */
+a {
+    color: #6b7d5f;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,44 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<center>
+    <h1>Welcome to Home Page</h1>
+<hr>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Actions</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task.title }}</td>
+            <td>{{ task.description }}</td>
+            <td>
+                <a href="{% url 'update' task.pk %}">Update</a>
+                <a href="{% url 'delete' task.pk %}">Trash</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="text" placeholder="Search" > 
+    
+    <button type="submit">Search</button>
+</form>
+
+<a href="{% url 'add' %}">Add new Task</a><br>
+
+</center>
+
+
+{% endblock content %}

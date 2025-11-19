@@ -1,0 +1,27 @@
+{% extends "main.html" %}
+{% block content %}
+<center>
+<h1>Trash</h1>
+<a href="{% url 'restore_all' %}">Restore All</a> | <a href="{% url 'clear_all' %}">Clear All</a>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Desc</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task.title }}</td>
+            <td>{{ task.description }}</td>
+            <td>
+                <a href="{% url 'restore' task.pk %}">Restore</a> |
+                <a href="{% url 'delete_permanent' task.pk %}">Delete Permanently</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</center>
+{% endblock %}
